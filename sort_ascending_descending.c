@@ -15,10 +15,10 @@ struct node  //node structure
 
 int main()
 {
-    int data=0;
+    int data=0,nodecount=0;
    struct node *head=NULL;
    printf("enter -1 to stop \n \n ");
-   while(data!=-1)
+    while(1)
   {
 
       printf("enter the numbers first in ascending and then in descending  sequence\n \n ");
@@ -26,14 +26,38 @@ int main()
       scanf("%d",&data);
       if(data==-1)break;
       head=insert_node(head,data);
+      nodecount++;
+
 
   }
+  if(head==NULL)
+  {
+      printf("list empty");
+      exit(0);
+  }
+  if(nodecount==1)// to handle the sample  input :2->null
+  {
+      display(head);
+
+  }
+  else if(nodecount==2)//to handle the  sample input :2 ->1->null
+  {
+      if(head->data>head->next->data)
+      {
+          data= head->data;
+          head->data=head->next->data;
+          head->next->data=data;
+      }
+       display(head);
+  }
+  else{
   display(head);
   head=sort_list(head);
   printf("\n");
   printf(" sorted :");
   display(head);
     return 0;
+  }
 }
 struct node *insert_node(struct node *head,int  data) //insert node at last
 {
