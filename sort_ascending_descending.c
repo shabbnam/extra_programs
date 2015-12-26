@@ -34,7 +34,6 @@ int main()
   {
       printf("list empty");
       exit(0);
-<<<<<<< HEAD
   }
   if(nodecount==1)// to handle the sample  input :2->null
   {
@@ -51,7 +50,7 @@ int main()
       }
        display(head);
   }
-=======
+
   }
   if(nodecount==1)// to handle the sample  input :2->null
   {
@@ -68,7 +67,6 @@ int main()
       }
        display(head);
   }
->>>>>>> 52a70350d3644ff194275aa32c739cf10a54bd50
   else{
   display(head);
   head=sort_list(head);
