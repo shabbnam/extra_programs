@@ -18,7 +18,7 @@ int main()
     int data=0,nodecount=0;
    struct node *head=NULL;
    printf("enter -1 to stop \n \n ");
-   while(data!=-1)
+    while(1)
   {
 
       printf("enter the numbers first in ascending and then in descending  sequence\n \n ");
@@ -34,6 +34,7 @@ int main()
   {
       printf("list empty");
       exit(0);
+<<<<<<< HEAD
   }
   if(nodecount==1)// to handle the sample  input :2->null
   {
@@ -50,6 +51,24 @@ int main()
       }
        display(head);
   }
+=======
+  }
+  if(nodecount==1)// to handle the sample  input :2->null
+  {
+      display(head);
+
+  }
+  else if(nodecount==2)//to handle the  sample input :2 ->1->null
+  {
+      if(head->data>head->next->data)
+      {
+          data= head->data;
+          head->data=head->next->data;
+          head->next->data=data;
+      }
+       display(head);
+  }
+>>>>>>> 52a70350d3644ff194275aa32c739cf10a54bd50
   else{
   display(head);
   head=sort_list(head);
@@ -57,6 +76,7 @@ int main()
   printf(" sorted :");
   display(head);
     return 0;
+  }
 }
 }
 struct node *insert_node(struct node *head,int  data) //insert node at last
@@ -125,7 +145,7 @@ void display(struct node * head)//display linked list
         temp=temp->next;
     }
 
-  printf("null");
-}
+  printf("  null  ");
+  }
 
 
