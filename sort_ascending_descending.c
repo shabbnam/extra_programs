@@ -143,7 +143,7 @@ void display(struct node * head)//display linked list
         temp=temp->next;
     }
 
-  printf("  null  ");
+  printf("   null  ");
   }
 
 
